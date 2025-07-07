@@ -1,8 +1,8 @@
 import React from "react";
-import { Spotlight } from "../lib/ui/Spotlight";
+import { Spotlight } from "./ui/Spotlight";
 import { cn } from "../lib/utils";
-import { TextGenerateEffect } from "../lib/ui/TextGenerateEffect";
-import MagicButton from "../lib/ui/MagicButton";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
@@ -47,7 +47,7 @@ const Hero = () => {
           </h2>
           <TextGenerateEffect
             className="text-center text-[40px] md:text-8xl lg:text-8xl"
-            words="Transforming Concepts Into Seamless Experiences"
+            words="Transforming Concepts Into Seamless User Experiences"
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
             Hi, I&apos;m Mrunal, a Next.js Developer
