@@ -68,6 +68,10 @@ export const BentoGridItem = ({
     const text = "mrunal4271@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 5000);
   };
 
   return (
@@ -131,24 +135,24 @@ export const BentoGridItem = ({
 
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-6">
                 {leftLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    className=" lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
                     lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
                   </span>
                 ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+                <span className=" lg:px-3 py-2 px-3  rounded-lg text-center"></span>
               </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+              <div className="flex flex-col gap-3 md:gap-3 lg:gap-6">
+                <span className=" lg:px-3 py-2 px-3  rounded-lg text-center"></span>
                 {rightLists.map((item, i) => (
                   <span
                     key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
+                    className=" lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
                     lg:opacity-100 rounded-lg text-center bg-[#10132E]"
                   >
                     {item}
@@ -159,16 +163,18 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-5 relative">
-              <div
-                className={`absolute -bottom-5 right-0 ${
-                  copied ? "block" : "block"
-                }`}
-              >
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
+              {copied && (
+                <div
+                  className={`absolute -bottom-5 right-0 ${
+                    copied ? "block" : "block"
+                  }`}
+                >
+                  <Lottie options={defaultOptions} height={200} width={400} />
+                </div>
+              )}
 
               <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
+                title={copied ? "Email is Copied!" : "Copy email address"}
                 icon={<IoCopyOutline />}
                 position="left"
                 handleClick={handleCopy}

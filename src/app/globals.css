@@ -4,7 +4,7 @@
 @import "tailwindcss/utilities.css" layer(utilities);
 
 /* Root variables */
-:root {
+@theme {
   /* Color variables */
   --black: #000;
   --black-100: #000211;
