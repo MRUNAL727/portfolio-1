@@ -8,6 +8,11 @@ import {
 } from "motion/react";
 import { cn } from "../../lib/utils";
 
+type navItem = {
+  link: string;
+  name: string;
+  icon?: React.ReactNode;
+};
 export const FloatingNav = ({
   navItems,
   className,
@@ -15,7 +20,7 @@ export const FloatingNav = ({
   navItems: {
     name: string;
     link: string;
-    icon?: JSX.Element;
+    icon?: React.ReactNode;
   }[];
   className?: string;
 }) => {
@@ -59,7 +64,7 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {navItems.map((navItem: navItem, idx: number) => (
           <a
             key={`link=${idx}`}
             href={navItem.link}
