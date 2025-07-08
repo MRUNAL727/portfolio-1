@@ -2,6 +2,7 @@ import { Experience } from "../../components/Experience";
 import Grid from "../../components/Grid";
 import Hero from "../../components/Hero";
 import RecentProjects from "../../components/RecentProjects";
+import Skills from "../../components/Skills";
 import { FloatingNav } from "../../components/ui/FloatingNavbar";
 import { navItems } from "../../data";
 
@@ -17,6 +18,7 @@ export default function Home() {
         <Grid />
         <RecentProjects />
         <Experience />
+        <Skills />
       </div>
     </main>
   );
